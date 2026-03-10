@@ -142,10 +142,16 @@ func (e *Engine) detectVulnerabilities() {
 func (e *Engine) generateReport() {
 	generator := report.NewGenerator(e.Report)
 	generator.ExportText()
-	err := generator.ExportJSON("report.json")
-	if err != nil {
+
+	if err := generator.ExportJSON("report.json"); err != nil {
 		fmt.Printf(" [!] Error exporting JSON: %v\n", err)
 	} else {
 		fmt.Println(" [!] Report saved to report.json")
+	}
+
+	if err := generator.ExportHTML("report.html"); err != nil {
+		fmt.Printf(" [!] Error exporting HTML: %v\n", err)
+	} else {
+		fmt.Println(" [!] Report saved to report.html")
 	}
 }
