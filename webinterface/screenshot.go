@@ -20,8 +20,6 @@ func NewAnalyzer(outputPath string) *Analyzer {
 
 // CaptureScreenshots captures screenshots of live web interfaces.
 func (a *Analyzer) CaptureScreenshots(hosts []models.Host) {
-	fmt.Println("  [-] Capturing screenshots (using placeholder logic)")
-
 	var wg sync.WaitGroup
 	for i := range hosts {
 		if hosts[i].HTTPInfo == nil {

@@ -1,7 +1,6 @@
 package endpoint
 
 import (
-	"fmt"
 	"io"
 	"net/http"
 	"reconx/models"

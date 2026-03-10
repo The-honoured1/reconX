@@ -1,7 +1,6 @@
 package enumeration
 
 import (
-	"fmt"
 	"log"
 	"reconx/models"
 	"sync"

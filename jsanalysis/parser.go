@@ -1,7 +1,6 @@
 package jsanalysis
 
 import (
-	"fmt"
 	"io"
 	"net/http"
 	"reconx/models"
