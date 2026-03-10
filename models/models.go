@@ -66,3 +66,12 @@ type Report struct {
 	Vulnerabilities []Vulnerability
 	ScanDuration    time.Duration
 }
+
+// ProgressUpdate represents a message sent from the engine to the UI.
+type ProgressUpdate struct {
+	Stage    string
+	Message  string
+	Progress float64 // 0.0 to 1.0
+	Data     interface{}
+	Done     bool
+}

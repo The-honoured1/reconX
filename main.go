@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"reconx/engine"
+	"reconx/ui"
 )
 
 func main() {
@@ -21,5 +22,8 @@ func main() {
 	}
 
 	appEngine := engine.NewEngine(*target)
-	appEngine.Run()
+	if err := ui.Run(appEngine); err != nil {
+		fmt.Printf("Error running TUI: %v\n", err)
+		os.Exit(1)
+	}
 }

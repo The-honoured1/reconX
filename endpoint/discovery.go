@@ -29,8 +29,6 @@ func (s *Scanner) Discover(host *models.Host) {
 	if host.HTTPInfo == nil {
 		return
 	}
-
-	fmt.Printf("  [-] Scanning endpoints for %s\n", host.HTTPInfo.URL)
 	
 	resp, err := s.Client.Get(host.HTTPInfo.URL)
 	if err != nil {

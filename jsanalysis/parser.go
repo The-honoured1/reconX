@@ -31,8 +31,6 @@ func (a *Analyzer) Analyze(host *models.Host) {
 		return
 	}
 
-	fmt.Printf("  [-] Analyzing %d JS files for %s\n", len(host.HTTPInfo.JSFiles), host.Hostname)
-
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 

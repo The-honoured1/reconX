@@ -40,7 +40,6 @@ func (s *SubdomainScanner) Scan(domain string) []models.Subdomain {
 		wg.Add(1)
 		go func(src Enumerator) {
 			defer wg.Done()
-			fmt.Printf("  [-] Running %s enumeration...\n", src.Name())
 			subs, err := src.Enumerate(domain)
 			if err != nil {
 				log.Printf("Error from %s: %v", src.Name(), err)

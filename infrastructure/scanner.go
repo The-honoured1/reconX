@@ -22,8 +22,6 @@ func NewScanner() *Scanner {
 
 // ScanPorts performs a TCP port scan on a host.
 func (s *Scanner) ScanPorts(host *models.Host) {
-	fmt.Printf("  [-] Scanning ports for %s\n", host.Hostname)
-
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 
