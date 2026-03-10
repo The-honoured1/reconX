@@ -1,0 +1,156 @@
+{
+  "Target": {
+    "Domain": "google.com",
+    "CreatedAt": "2026-03-10T05:18:14.58064817+01:00"
+  },
+  "Subdomains": [
+    {
+      "Name": "db.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "mail.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "blog.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "api.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "test.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "admin.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "dev.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "www.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    },
+    {
+      "Name": "stage.google.com",
+      "Source": "BruteForce",
+      "IPs": null
+    }
+  ],
+  "Hosts": [
+    {
+      "Hostname": "www.google.com",
+      "IP": "",
+      "Ports": [
+        {
+          "Number": 25,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        },
+        {
+          "Number": 80,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        },
+        {
+          "Number": 443,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        }
+      ],
+      "HTTPInfo": {
+        "URL": "https://www.google.com",
+        "StatusCode": 200,
+        "Title": "Placeholder Title",
+        "WebServer": "",
+        "Endpoints": null,
+        "JSFiles": null
+      },
+      "Screenshot": "./screenshots/www.google.com.png"
+    },
+    {
+      "Hostname": "api.google.com",
+      "IP": "",
+      "Ports": [
+        {
+          "Number": 25,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        },
+        {
+          "Number": 80,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        },
+        {
+          "Number": 443,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        }
+      ],
+      "HTTPInfo": {
+        "URL": "https://api.google.com",
+        "StatusCode": 404,
+        "Title": "Placeholder Title",
+        "WebServer": "",
+        "Endpoints": null,
+        "JSFiles": null
+      },
+      "Screenshot": "./screenshots/api.google.com.png"
+    },
+    {
+      "Hostname": "blog.google.com",
+      "IP": "",
+      "Ports": [
+        {
+          "Number": 25,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        },
+        {
+          "Number": 80,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        },
+        {
+          "Number": 443,
+          "Protocol": "TCP",
+          "Service": "",
+          "State": "OPEN"
+        }
+      ],
+      "HTTPInfo": {
+        "URL": "https://blog.google.com",
+        "StatusCode": 200,
+        "Title": "Placeholder Title",
+        "WebServer": "",
+        "Endpoints": null,
+        "JSFiles": null
+      },
+      "Screenshot": "./screenshots/blog.google.com.png"
+    }
+  ],
+  "Vulnerabilities": null,
+  "ScanDuration": 0
+}

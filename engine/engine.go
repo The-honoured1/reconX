@@ -2,12 +2,15 @@ package engine
 
 import (
 	"fmt"
-	"log"
 	"reconx/endpoint"
 	"reconx/enumeration"
+	"reconx/infrastructure"
 	"reconx/jsanalysis"
 	"reconx/livehost"
 	"reconx/models"
+	"reconx/report"
+	"reconx/vulnerability"
+	"reconx/webinterface"
 	"time"
 )
 
@@ -96,21 +99,35 @@ func (e *Engine) discoverEndpoints() {
 }
 
 func (e *Engine) scanInfrastructure() {
-	// TODO: Implement infrastructure and port analysis
-	log.Println("Scan infrastructure... (stub)")
+	scanner := infrastructure.NewScanner()
+	scanner.MultiScan(e.Report.Hosts)
+
+	totalPorts := 0
+	for _, host := range e.Report.Hosts {
+		totalPorts += len(host.Ports)
+	}
+	fmt.Printf("  [!] Identified %d open ports across all hosts\n", totalPorts)
 }
 
 func (e *Engine) analyzeWebInterfaces() {
-	// TODO: Implement web interface analysis (screenshots)
-	log.Println("Analyze web interfaces... (stub)")
+	analyzer := webinterface.NewAnalyzer("./screenshots")
+	analyzer.CaptureScreenshots(e.Report.Hosts)
+	fmt.Printf("  [!] Captured screenshots for %d hosts\n", len(e.Report.Hosts))
 }
 
 func (e *Engine) detectVulnerabilities() {
-	// TODO: Implement vulnerability detection
-	log.Println("Detect vulnerabilities... (stub)")
+	scanner := vulnerability.NewScanner()
+	e.Report.Vulnerabilities = scanner.MultiScan(e.Report.Hosts)
+	fmt.Printf("  [!] Detected %d potential vulnerabilities\n", len(e.Report.Vulnerabilities))
 }
 
 func (e *Engine) generateReport() {
-	// TODO: Implement report generation
-	log.Println("Generate report... (stub)")
+	generator := report.NewGenerator(e.Report)
+	generator.ExportText()
+	err := generator.ExportJSON("report.json")
+	if err != nil {
+		fmt.Printf(" [!] Error exporting JSON: %v\n", err)
+	} else {
+		fmt.Println(" [!] Report saved to report.json")
+	}
 }
