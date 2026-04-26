@@ -21,7 +21,7 @@ Ensure you have Go installed (version 1.21 or later is recommended).
 Clone the repository and build the project:
 
 ```bash
-git clone https://github.com/yourusername/reconX.git
+git clone https://github.com/The-honoured1/reconX.git
 cd reconX
 go mod download
 go build -o reconx main.go
